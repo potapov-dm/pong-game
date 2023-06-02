@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <h1 class="text-center mt-2" id="h1-name">Pong Game</h1>
+
+    <div id="login" class="container mx-auto" style="max-width:300px;">
+        <br><p>Number of players: <span id="player-count">0 / 4</span></p>
+        <div class="form-group">
+            <input type="text" class="form-control" id="player-name" placeholder="Enter name" maxlength="20" >
+        </div>
+        <button type="submit" class="btn btn-primary" id="join_btn" onclick="join()">Join</button>
+    </div>
+
+    <div id="end-game" class="container mx-auto" style="max-width:300px;">
+        <br><p>The game is over!</p>
+        <button type="submit" class="btn btn-primary" id="rejoin" onclick="rejoin()">Continue</button>
+    </div>
+
+    <div id="game">
+        <div id="back" onclick="back()">🔙</div>
+        <div id="rebound">0</div>
+        <canvas id="canvas" width="400" height="400"></canvas>
+        <div class="text-center mt-5">
+            <button class="btn btn-primary" id="start_game_btn" onclick="startGame()" disabled>Start Game</button>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header" id="player1-card-header">Player 1 | <span id="player1-lives">0</span>🧡</div>
+                    <div class="card-body" id="player1-card-body"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header" id="player2-card-header">Player 2 | <span id="player2-lives">0</span>🧡</div>
+                    <div class="card-body" id="player2-card-body"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header" id="player3-card-header">Player 3 | <span id="player3-lives">0</span>🧡</div>
+                    <div class="card-body" id="player3-card-body"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header" id="player4-card-header">Player 4 | <span id="player4-lives">0</span>🧡</div>
+                    <div class="card-body" id="player4-card-body"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="pongGame.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
